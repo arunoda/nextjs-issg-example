@@ -67,21 +67,9 @@ export default function NewsPage({slug, updatedAt}) {
     )
 }
 
-export async function getStaticPaths() {
+NewsPage.getInitialProps = async ({query}) => {
     return {
-        paths: [
-            {params: {slug: 'covid19'}},
-            {params: {slug: 'global-warming'}},
-        ],
-        fallback: false
+        slug: query.slug,
+        updatedAt: Date.now()
     }
-}
-
-export async function getStaticProps({params}) {
-    return {
-        props: {
-            slug: params.slug.replace(/-.*/, ''),
-            updatedAt: Date.now()
-        }
-    }
-}
+};
