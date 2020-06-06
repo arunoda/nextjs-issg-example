@@ -12,11 +12,13 @@ export default function Index() {
         <div>
             <h1>The News Portal</h1>
             <ul>
-                <li><a href="https://arunoda.me/blog/what-is-nextjs-issg">What is Next.js iSSG?</a></li>
                 <li><NewsLink slug="covid19" title="Covid 19"/></li>
                 <li><NewsLink slug="globalwarming" title="Global Warming"/></li>
                 <li><NewsLink slug={`srilanka-${nanoid(15)}`} title="Sri Lanka"/></li>
             </ul>
+            <div className="learn-more">
+                <a href="https://arunoda.me/blog/what-is-nextjs-issg">What is Next.js iSSG?</a>
+            </div>
             <style jsx>{`
                 div {
                     font-family: Arial;
@@ -27,8 +29,17 @@ export default function Index() {
                    margin: 10px 0; 
                 }
 
+                a,
                 li :global(a) {
                     text-decoration: none;
+                }
+
+                .learn-more {
+                    position: fixed;
+                    bottom: 0px;
+                    left: 30px;
+                    padding: 30px 0;
+                    font-size: 14px;
                 }
             `}</style>
         </div>

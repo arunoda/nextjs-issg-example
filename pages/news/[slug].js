@@ -41,6 +41,9 @@ export default function NewsPage({slug, updatedAt}) {
                     (<span>New version in "{newVersionIn}" secs.</span>)
                 }
             </div>
+            <div className="learn-more">
+                <a href="https://arunoda.me/blog/what-is-nextjs-issg">What is Next.js iSSG?</a>
+            </div>
             <style jsx>{`
                 .container {
                     font-family: Arial;
@@ -59,6 +62,13 @@ export default function NewsPage({slug, updatedAt}) {
 
                 .time {
                     font-weight: bold;
+                }
+
+                .learn-more {
+                    position: fixed;
+                    bottom: 0px;
+                    padding: 30px 0;
+                    font-size: 14px;
                 }
             `}</style>
         </div>
