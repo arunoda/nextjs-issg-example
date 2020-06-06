@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 
-const revalidateInterval = 20;
 
 function getTimeDiff(updatedAt) {
     return Math.floor((Date.now() - updatedAt)/1000)
@@ -10,7 +9,6 @@ function getTimeDiff(updatedAt) {
 export default function NewsPage({slug, updatedAt}) {
     const [timeDiff, setTimeDiff] = useState(getTimeDiff(updatedAt))
     const timeString = new Date(updatedAt).toLocaleTimeString();
-    const newVersionIn = Math.max(revalidateInterval - timeDiff, 0);
 
     const reloadNow = (e) => {
         e.preventDefault();
@@ -34,12 +32,6 @@ export default function NewsPage({slug, updatedAt}) {
             </div>
             <div>
                 <Link href="/"><a>Home</a></Link>
-                {' | '}
-                {
-                    newVersionIn === 0? 
-                    (<a href="#" onClick={reloadNow}>Reload Now</a>) : 
-                    (<span>New version in "{newVersionIn}" secs.</span>)
-                }
             </div>
             <div className="learn-more">
                 <a href="https://arunoda.me/blog/what-is-nextjs-issg">What is Next.js iSSG?</a>
@@ -81,7 +73,7 @@ export async function getStaticPaths() {
             {params: {slug: 'covid19'}},
             {params: {slug: 'global-warming'}},
         ],
-        fallback: true
+        fallback: false
     }
 }
 
@@ -90,7 +82,6 @@ export async function getStaticProps({params}) {
         props: {
             slug: params.slug.replace(/-.*/, ''),
             updatedAt: Date.now()
-        },
-        unstable_revalidate: revalidateInterval
+        }
     }
 }
