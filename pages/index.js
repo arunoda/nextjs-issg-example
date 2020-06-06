@@ -12,6 +12,7 @@ export default function Index() {
         <div>
             <h1>The News Portal</h1>
             <ul>
+                <li><a href="https://arunoda.me/blog/what-is-nextjs-issg">What is Next.js iSSG?</a></li>
                 <li><NewsLink slug="covid19" title="Covid 19"/></li>
                 <li><NewsLink slug="globalwarming" title="Global Warming"/></li>
                 <li><NewsLink slug={`srilanka-${nanoid(15)}`} title="Sri Lanka"/></li>
