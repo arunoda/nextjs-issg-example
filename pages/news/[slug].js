@@ -71,7 +71,7 @@ export async function getStaticPaths() {
     return {
         paths: [
             {params: {slug: 'covid19'}},
-            {params: {slug: 'global-warming'}},
+            {params: {slug: 'globalwarming'}},
         ],
         fallback: false
     }
