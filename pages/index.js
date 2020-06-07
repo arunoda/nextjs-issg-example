@@ -21,7 +21,7 @@ export default function Index() {
             <style jsx>{`
                 div {
                     font-family: Arial;
-                    margin: 50px 100px;
+                    margin: 50px 30px;
                 }
 
                 li {

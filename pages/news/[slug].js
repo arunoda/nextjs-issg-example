@@ -28,7 +28,7 @@ export default function NewsPage({slug, updatedAt}) {
             <h1>News: {slug}</h1>
             <p>This is a news about: {slug}</p>
             <div className="meta">
-                Updated at <span className="time">{timeString}</span> ({timeDiff} secs ago.)
+                Updated at <span className="time">{timeString}</span> ({timeDiff}s ago.)
             </div>
             <div>
                 <Link href="/"><a>Home</a></Link>
@@ -39,7 +39,7 @@ export default function NewsPage({slug, updatedAt}) {
             <style jsx>{`
                 .container {
                     font-family: Arial;
-                    margin: 50px 100px;
+                    margin: 50px 30px;
                 }
 
                 a {
@@ -50,6 +50,7 @@ export default function NewsPage({slug, updatedAt}) {
                     margin: 25px 0 15px 0;
                     padding-bottom: 15px;
                     border-bottom: 1px solid #DDD;
+                    font-size: 13px;
                 }
 
                 .time {
