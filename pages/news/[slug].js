@@ -47,7 +47,7 @@ export default function NewsPage({slug, updatedAt}) {
             <style jsx>{`
                 .container {
                     font-family: Arial;
-                    margin: 50px 100px;
+                    margin: 50px 30px;
                 }
 
                 a {
