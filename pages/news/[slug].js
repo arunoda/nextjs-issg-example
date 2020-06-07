@@ -30,7 +30,7 @@ export default function NewsPage({slug, updatedAt}) {
             <h1>News: {slug}</h1>
             <p>This is a news about: {slug}</p>
             <div className="meta">
-                Updated at <span className="time">{timeString}</span> ({timeDiff} secs ago.)
+                Updated at <span className="time">{timeString}</span> ({timeDiff}s ago.)
             </div>
             <div>
                 <Link href="/"><a>Home</a></Link>
