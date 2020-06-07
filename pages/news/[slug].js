@@ -58,6 +58,7 @@ export default function NewsPage({slug, updatedAt}) {
                     margin: 25px 0 15px 0;
                     padding-bottom: 15px;
                     border-bottom: 1px solid #DDD;
+                    font-size: 13px;
                 }
 
                 .time {
