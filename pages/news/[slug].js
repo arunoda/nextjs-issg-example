@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 
-const revalidateInterval = 20;
+const revalidateInterval = 10;
 
 function getTimeDiff(updatedAt) {
     return Math.floor((Date.now() - updatedAt)/1000)
@@ -36,8 +36,8 @@ export default function NewsPage({slug, updatedAt}) {
                 <Link href="/"><a>Home</a></Link>
                 {' | '}
                 {
-                    newVersionIn === 0? 
-                    (<a href="#" onClick={reloadNow}>Reload Now</a>) : 
+                    newVersionIn === 0?
+                    (<a href="#" onClick={reloadNow}>Reload Now</a>) :
                     (<span>New version in "{newVersionIn}" secs.</span>)
                 }
             </div>
