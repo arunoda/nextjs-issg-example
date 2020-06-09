@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 
-const revalidateInterval = 10;
+const revalidateInterval = 20;
 
 function getTimeDiff(updatedAt) {
     return Math.floor((Date.now() - updatedAt)/1000)
